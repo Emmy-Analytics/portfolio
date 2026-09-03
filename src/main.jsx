@@ -10,7 +10,7 @@ const projects = [
     short: "Reducing Lost & Stuck Parcels through AI Sorting Monitoring",
     category: "LOGISTICS · OPERATIONS · AI",
     year: "Shopee Express 2026",
-    image: "/shopee.png",
+    image: `${import.meta.env.BASE_URL}shopee.png`,
     github: "https://github.com/Emmy-Analytics/shopee-warehouse-optimization",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     short: "Improving Alfamart POS Data: Detecting Bulk Buying, Input Errors & Data Inconsistencies",
     category: "DATA QUALITY · POS ANALYTICS",
     year: "Alfamart 2026",
-    image: "/alfamart.jpg",
+    image: `${import.meta.env.BASE_URL}alfamart.jpg`,
     github: "https://github.com/Emmy-Analytics/alfamart-pos-data-quality-analysis",
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     short: "Increasing Purchase Conversion by 200% through Wishlist & Checkout Optimization",
     category: "E-COMMERCE · CONVERSION",
     year: "Tokopedia 2026",
-    image: "/tokopedia.png",
+    image: `${import.meta.env.BASE_URL}tokopedia.png`,
     github: "https://github.com/Emmy-Analytics/tokopedia-purchase-conversion",
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     short: "Python Library Management System",
     category: "PYTHON · CRUD · DATA MANAGEMENT",
     year: "Python 2026",
-    image: "/python.png",
+    image: `${import.meta.env.BASE_URL}python.png`,
     github: "https://github.com/Emmy-Analytics/python-library-management-system",
   },
 ];
@@ -309,7 +309,10 @@ function App() {
             <div className="hero-description">
 
               <div className="hero-photo">
-                <img src="/emmy.jpeg" alt="Emmy Jacklyn Pontoan" />
+                <img
+                  src={`${import.meta.env.BASE_URL}emmy.jpeg`}
+                  alt="Emmy Jacklyn Pontoan"
+                />
               </div>
 
               <p>
@@ -418,7 +421,7 @@ function App() {
 
             <div className="about-card-photo">
               <img
-                src="/profile.jpg"
+                src={`${import.meta.env.BASE_URL}profile.jpg`}
                 alt="Emmy Jacklyn"
               />
             </div>
