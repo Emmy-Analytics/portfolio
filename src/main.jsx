@@ -10,7 +10,7 @@ const projects = [
     short: "Reducing Lost & Stuck Parcels through AI Sorting Monitoring",
     category: "LOGISTICS · OPERATIONS · AI",
     year: "Shopee Express 2026",
-    image: `${import.meta.env.BASE_URL}shopee.png`,
+    image: "./shopee.png",
     github: "https://github.com/Emmy-Analytics/shopee-warehouse-optimization",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     short: "Improving Alfamart POS Data: Detecting Bulk Buying, Input Errors & Data Inconsistencies",
     category: "DATA QUALITY · POS ANALYTICS",
     year: "Alfamart 2026",
-    image: `${import.meta.env.BASE_URL}alfamart.jpg`,
+    image: "./alfamart.jpg",
     github: "https://github.com/Emmy-Analytics/alfamart-pos-data-quality-analysis",
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     short: "Increasing Purchase Conversion by 200% through Wishlist & Checkout Optimization",
     category: "E-COMMERCE · CONVERSION",
     year: "Tokopedia 2026",
-    image: `${import.meta.env.BASE_URL}tokopedia.png`,
+    image: "./tokopedia.png",
     github: "https://github.com/Emmy-Analytics/tokopedia-purchase-conversion",
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     short: "Python Library Management System",
     category: "PYTHON · CRUD · DATA MANAGEMENT",
     year: "Python 2026",
-    image: `${import.meta.env.BASE_URL}python.png`,
+    image: "./python.png",
     github: "https://github.com/Emmy-Analytics/python-library-management-system",
   },
 ];
@@ -310,7 +310,7 @@ function App() {
 
               <div className="hero-photo">
                 <img
-                  src={`${import.meta.env.BASE_URL}emmy.jpeg`}
+                  src="./emmy.jpeg"
                   alt="Emmy Jacklyn Pontoan"
                 />
               </div>
@@ -421,7 +421,7 @@ function App() {
 
             <div className="about-card-photo">
               <img
-                src={`${import.meta.env.BASE_URL}profile.jpg`}
+                src="./profile.jpg"
                 alt="Emmy Jacklyn"
               />
             </div>
