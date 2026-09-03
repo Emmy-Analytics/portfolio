@@ -1,0 +1,5922 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #0b2035;
+  --navy-2: #102b46;
+  --blue: #3b8ef3;
+  --blue-light: #b7dcff;
+
+  --white: #f4f8fc;
+  --muted: #9eb2c5;
+
+  --slate: #dceaf7;
+  --slate-2: #c8dced;
+
+  --dark-line: rgba(255, 255, 255, 0.14);
+  --light-line: rgba(11, 32, 53, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site {
+  width: 100%;
+  overflow: hidden;
+  background: var(--black);
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  height: 82px;
+
+  padding: 0 3.5vw;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  color: var(--white);
+
+  mix-blend-mode: difference;
+}
+
+.logo {
+  border: 0;
+  background: transparent;
+  color: var(--white);
+
+  justify-self: start;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+.nav nav {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+
+.nav nav button {
+  border: 0;
+  background: transparent;
+  color: var(--white);
+
+  font-size: 20px;
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+}
+
+.nav-year {
+  justify-self: end;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.menu {
+  display: none;
+
+  border: 0;
+  background: transparent;
+  color: var(--white);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.billie-hero {
+  position: relative;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 680px;
+
+  padding: 0 3.5vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(59, 142, 243, 0.13),
+      transparent 40%
+    ),
+    var(--navy);
+
+  color: var(--white);
+
+  overflow: hidden;
+}
+
+/* =========================================
+   HERO NAME
+========================================= */
+
+.hero-name {
+  position: relative;
+
+  z-index: 6;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 0;
+}
+.hero-name h1 {
+  margin: 0;
+
+  white-space: nowrap;
+
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+  font-size: clamp(6rem, 14vw, 15rem);
+
+  font-weight: 500;
+
+  line-height: .82;
+
+  letter-spacing: -.09em;
+
+  color: #f7f9ff;
+
+  animation:
+    welcomeColor 5s ease-in-out infinite alternate;
+}
+
+@keyframes welcomeColor {
+  0% {
+    color: rgb(143, 183, 255);
+  }
+
+  16.6% {
+    color: rgb(85, 217, 138);
+  }
+
+  33.3% {
+    color: rgb(155, 124, 255);
+  }
+
+  50% {
+    color: rgb(240, 92, 255);
+  }
+
+  66.6% {
+    color: rgb(255, 215, 90);
+  }
+
+  83.3% {
+    color: rgb(247, 249, 255);
+  }
+
+  100% {
+    color: rgb(143, 183, 255);
+  }
+}
+
+
+/* =========================================
+   FLOATING DATA CARD
+========================================= */
+
+.floating-data-card {
+  position: absolute;
+
+  z-index: 8;
+
+  left: 50%;
+  top: 50%;
+
+  width: 245px;
+  height: 175px;
+
+  padding: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dceaf7,
+      #a9d6ff
+    );
+
+  color: #071522;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-4deg);
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, .45);
+
+  pointer-events: none;
+}
+
+.fdc-top {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+}
+
+.fdc-number {
+  margin-top: 20px;
+
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+  font-size: 38px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  letter-spacing: -.07em;
+
+  color: #0a3560;
+}
+
+.fdc-bottom {
+  position: absolute;
+
+  left: 16px;
+  bottom: 14px;
+
+  font-size: 8px;
+
+  color: #6d6860;
+}
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.hero-description {
+  position: absolute;
+
+  left: 50%;
+  bottom: 10%;
+
+  width: min(430px, 70%);
+
+  transform: translateX(-50%);
+
+  text-align: center;
+}
+
+.hero-description p {
+  margin: 0;
+
+  color: var(--white);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  line-height: 1.45;
+
+  letter-spacing: 0;
+}
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.hero-scroll {
+  position: absolute;
+
+  left: 3.5vw;
+  bottom: 4.5%;
+
+  border: 0;
+
+  background: transparent;
+  color: var(--white);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+}
+
+/* =========================================
+   WORK
+========================================= */
+
+.work-billie {
+  background: #EAF1FF;
+  color: #06154F;
+
+  padding: 14vw 3.5vw 9vw;
+}
+
+.work-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 70px;
+
+  margin-bottom: 8vw;
+}
+
+.work-heading > div > span {
+  display: block;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.work-heading h2 {
+  margin: 28px 0 0;
+
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+  font-size: clamp(4rem, 8.2vw, 9rem);
+
+  font-weight: 500;
+
+  line-height: 0.88;
+
+  letter-spacing: -0.08em;
+}
+
+.work-heading h2 em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.work-heading p {
+  width: 300px;
+
+  margin: 0;
+
+  color: #77736c;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* PROJECT LIST */
+
+.project-list {
+  border-top: 1px solid rgba(0,0,0,.18);
+}
+
+.project-row {
+  position: relative;
+
+  min-height: 135px;
+
+  display: grid;
+
+  grid-template-columns:
+    7%
+    1fr
+    8%
+    auto;
+
+  align-items: center;
+
+  border-bottom: 1px solid rgba(0,0,0,.18);
+
+  transition:
+    padding .35s ease,
+    background .35s ease;
+}
+
+.project-row:hover {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  background:
+    rgba(47, 128, 237, 0.08);
+}
+
+.project-number {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.project-year {
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.project-title h3 {
+  font-size: 35px;
+}
+
+.project-row:hover .project-title h3 {
+  transform: translateX(4px);
+}
+
+.project-title span {
+  display: block;
+
+  margin-top: 12px;
+
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  color: #64728c;
+
+  font-size: 30px;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  letter-spacing: .035em;
+}
+
+.project-arrow {
+  transition:
+    transform .4s cubic-bezier(.2,.8,.2,1);
+}
+
+.project-row:hover .project-arrow {
+  transform: rotate(45deg) scale(1.08);
+}
+
+
+/* SEE ALL */
+
+.see-all {
+  margin-top: 55px;
+
+  border: 1px solid #0b0b0b;
+
+  border-radius: 100px;
+
+  padding: 13px 18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: transparent;
+  color: #0b0b0b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: .12em;
+
+  transition: .3s ease;
+}
+
+.see-all:hover {
+  background: var(--navy);
+  color: #e7e1d7;
+}
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-billie {
+  background:
+    linear-gradient(
+      140deg,
+      #071522,
+      #0b1f33
+    );
+
+  color: var(--white);
+
+  padding: 10vw 3.5vw 12vw;
+}
+
+.about-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #85817a;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: .15em;
+}
+
+.about-main {
+  display: grid;
+
+  grid-template-columns: 1.1fr .9fr;
+
+  gap: 10vw;
+
+  margin-top: 7vw;
+}
+
+.about-main h2 {
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+  font-size: clamp(4.5rem, 9.3vw, 10rem);
+
+  font-weight: 500;
+
+  line-height: .84;
+
+  letter-spacing: -.085em;
+}
+
+.about-main h2 em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.about-copy {
+  padding-top: 12px;
+}
+
+.about-copy .about-lead {
+  max-width: 520px;
+
+  margin: 0 0 25px;
+
+  color: var(--white);
+  font-size: clamp(1.3rem, 2vw, 2rem);
+
+  font-weight: 500;
+
+  line-height: 1.35;
+}
+
+.about-copy p:not(.about-lead) {
+  max-width: 500px;
+
+  color: #929088;
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+/* SERVICES */
+
+.services {
+  margin-top: 12vw;
+}
+
+.services > span,
+.clients > span {
+  color: #85817a;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: .15em;
+}
+
+.service-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-top: 30px;
+
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.service-grid div {
+  display: flex;
+
+  gap: 22px;
+
+  padding: 18px 0;
+
+  border-bottom: 1px solid rgba(255,255,255,.15);
+
+  font-size: 12px;
+}
+
+.service-grid b {
+  color: #696660;
+
+  font-size: 8px;
+}
+
+
+/* PROJECT CONTEXTS */
+
+.clients {
+  margin-top: 10vw;
+}
+
+.clients > div {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 18px 34px;
+
+  margin-top: 28px;
+}
+
+.clients strong {
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+  font-size: clamp(1.3rem, 2.7vw, 2.7rem);
+
+  font-weight: 500;
+
+  letter-spacing: -.05em;
+}
+/* =========================================
+   CURRENTLY
+========================================= */
+
+.current {
+  background:
+    linear-gradient(
+      135deg,
+      #a9d6ff,
+      #dceaf7
+    );
+
+  color: #071522;
+
+  padding: 10vw 3.5vw 11vw;
+}
+.current-label {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: .15em;
+}
+
+.current-content {
+  display: grid;
+
+  grid-template-columns: 1.1fr .9fr;
+
+  gap: 10vw;
+
+  margin-top: 7vw;
+}
+
+.current h2 {
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+  font-size: clamp(4.5rem, 9.2vw, 10rem);
+
+  font-weight: 500;
+
+  line-height: .84;
+
+  letter-spacing: -.085em;
+}
+
+.current h2 em {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.current-content > div {
+  padding-top: 10px;
+}
+
+.current-content > div span {
+  display: block;
+
+  margin-bottom: 22px;
+
+  color: #77736c;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: .15em;
+}
+
+.current-content strong {
+  display: block;
+
+  margin: 10px 0;
+
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 500;
+
+  letter-spacing: -.03em;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-billie {
+  position: relative;
+
+  min-height: 100svh;
+
+  padding: 9vw 3.5vw 35px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(70, 125, 255, 0.18),
+      transparent 42%
+    ),
+    #071522;
+
+  color: var(--white);
+}
+
+
+
+.contact-billie h2 {
+  margin: 0;
+
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+  font-size: clamp(5rem, 10.5vw, 11.5rem);
+
+  font-weight: 500;
+
+  line-height: .84;
+
+  letter-spacing: -.09em;
+
+  color: #F7F9FF;
+
+  cursor: none;
+}
+
+.contact-bottom {
+  position: absolute;
+
+  left: 3.5vw;
+  bottom: 7%;
+
+  display: flex;
+
+  gap: 110px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+}
+
+.contact-bottom div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.contact-bottom a {
+  transition: opacity .25s ease;
+}
+
+.contact-bottom a:hover {
+  opacity: .55;
+}
+
+.contact-bottom span {
+  color: #85817a;
+}
+
+.contact-cta {
+  position: absolute;
+
+  right: 3.5vw;
+  bottom: 6%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.contact-cta p {
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+  font-size: 23px;
+
+  font-weight: 500;
+
+  line-height: .95;
+
+  letter-spacing: -.06em;
+}
+
+.contact-cta a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 16px;
+
+  border: 1px solid #f5f5f2;
+
+  border-radius: 50px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  transition:
+    background .25s ease,
+    color .25s ease;
+}
+
+.contact-cta a:hover {
+  background: #f5f5f2;
+  color: #0b0b0b;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer-billie {
+  min-height: 110px;
+
+  padding: 32px 3.5vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
+  color: #021F94;
+
+  border-top: 1px solid rgba(2, 31, 148, 0.12);
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  letter-spacing: 0.06em;
+
+  text-align: center;
+}
+
+/* =========================================
+   VISUALS
+========================================= */
+
+.visual {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+/* DELIVERY */
+
+.visual-delivery {
+  background: #1a1a1a;
+}
+
+.visual-window {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 15px;
+
+  background: #171717;
+
+  color: #eee;
+}
+
+.window-top {
+  display: flex;
+
+  gap: 5px;
+}
+
+.window-top span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #999;
+}
+
+.window-title {
+  margin-top: 15px;
+
+  font-size: 7px;
+
+  letter-spacing: 0.12em;
+}
+
+.big-stat {
+  margin-top: 15px;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+
+  font-size: 34px;
+
+  font-weight: 500;
+}
+
+.big-stat span {
+  font-size: 15px;
+}
+
+.bar-row {
+  position: absolute;
+
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+
+  height: 42%;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 5px;
+}
+
+.bar-row i {
+  flex: 1;
+
+  background: #eee;
+}
+
+/* SHOPEE */
+
+.visual-shopee {
+  background: #d4c8b6;
+
+  display: grid;
+
+  place-items: center;
+}
+
+.orbit {
+  position: absolute;
+
+  border: 1px solid #111;
+
+  border-radius: 50%;
+}
+
+.orbit.one {
+  width: 220px;
+  height: 80px;
+
+  transform: rotate(25deg);
+}
+
+.orbit.two {
+  width: 180px;
+  height: 180px;
+
+  transform: rotate(-20deg);
+}
+
+.orbit.three {
+  width: 260px;
+  height: 120px;
+
+  transform: rotate(-40deg);
+}
+
+.orbit-center {
+  text-align: center;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  line-height: 0.8;
+}
+
+.orbit-center small {
+  font-size: 7px;
+
+  letter-spacing: 0.15em;
+}
+
+/* TOKOPEDIA */
+
+.visual-tokopedia {
+  position: relative;
+
+  background: #1c1c1c;
+
+  color: #eee;
+
+  padding: 20px;
+}
+
+.line-grid {
+  position: absolute;
+
+  inset: 20px;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 28px,
+      #ffffff14 29px
+    );
+}
+
+.visual-tokopedia svg {
+  position: absolute;
+
+  inset: 20%;
+
+  width: 80%;
+  height: 60%;
+}
+
+.visual-tokopedia polyline {
+  fill: none;
+
+  stroke: currentColor;
+
+  stroke-width: 5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+
+  animation:
+    drawLine 2.5s ease forwards;
+}
+
+.trend {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+
+  font-size: 24px;
+
+  font-weight: 500;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* DASHBOARD */
+
+.visual-dashboard {
+  background: #e8e1d6;
+  color: #111;
+
+  padding: 12px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-rows: auto 1fr;
+
+  gap: 8px;
+}
+
+.dash-card {
+  padding: 9px;
+
+  background: #f8f5ef;
+}
+
+.dash-card small {
+  display: block;
+
+  font-size: 6px;
+
+  letter-spacing: 0.1em;
+}
+
+.dash-card strong {
+  display: block;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 500;
+}
+
+.dash-chart {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 4px;
+
+  padding: 10px;
+
+  background: #111;
+}
+
+.dash-chart i {
+  flex: 1;
+
+  background: #eee;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .nav {
+    grid-template-columns: 1fr auto;
+
+    padding: 0 6vw;
+  }
+
+  .nav-year {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .nav nav {
+    display: none;
+
+    position: absolute;
+
+    top: 68px;
+    left: 6vw;
+    right: 6vw;
+
+    padding: 22px;
+
+    flex-direction: column;
+
+    background: #111;
+
+    border: 1px solid #333;
+
+    gap: 20px;
+  }
+
+  .nav nav.open {
+    display: flex;
+  }
+
+  /* HERO */
+
+  .billie-hero {
+  position: relative;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 680px;
+
+  padding: 0 3.5vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 48%,
+      rgba(47, 128, 237, 0.12),
+      transparent 38%
+    ),
+    #071522;
+
+  color: #f4f8fc;
+
+  overflow: hidden;
+}
+
+
+  .hero-name {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 4vh;
+  }
+
+  .hero-name h1 {
+    margin: 0;
+
+    white-space: nowrap;
+
+    font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+
+    font-size: clamp(6rem, 14vw, 15rem);
+
+    font-weight: 500;
+
+    line-height: .82;
+
+    letter-spacing: -.09em;
+
+    color: #f7f9ff;
+
+    animation:
+      welcomeColor 5s ease-in-out infinite alternate;
+  }
+
+  @keyframes welcomeColor {
+
+    0% {
+      color: #f7f9ff;
+    }
+
+    50% {
+      color: #b9d5ff;
+    }
+
+    100% {
+      color: #6fa6ff;
+    }
+
+  }
+
+  .hero-description {
+    width: 82%;
+
+    bottom: 12%;
+  }
+
+  .hero-description p {
+    font-size: 8px;
+    line-height: 1.5;
+  }
+
+  .hero-scroll {
+    left: 6vw;
+    bottom: 4%;
+  }
+
+  /* WORK */
+
+  .work-billie {
+    padding: 18vw 6vw;
+  }
+
+  .work-heading {
+    display: block;
+  }
+
+  .work-heading p {
+    margin-top: 30px;
+  }
+
+  .work-heading h2 {
+    font-size: 15vw;
+  }
+
+  .project-row {
+    min-height: 110px;
+
+    grid-template-columns: 10% 1fr auto;
+  }
+
+  .project-year {
+    display: none;
+  }
+
+  .project-title h3 {
+    font-size: 7vw;
+  }
+
+  .project-title span {
+    font-size: 7px;
+  }
+
+  .project-arrow {
+    width: 20px;
+  }
+
+  /* No hover-preview on touch devices */
+
+  .hover-project-image {
+    display: none;
+  }
+
+  /* ABOUT */
+
+  .about-billie {
+    padding: 18vw 6vw;
+  }
+
+  .about-main {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .about-main h2 {
+    font-size: 17vw;
+  }
+
+  .about-copy .about-lead {
+    font-size: 22px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clients > div {
+    gap: 14px 20px;
+  }
+
+  .clients strong {
+    font-size: 18px;
+  }
+
+  /* CURRENT */
+
+  .current {
+    padding: 18vw 6vw;
+  }
+
+  .current-content {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .current h2 {
+    font-size: 17vw;
+  }
+
+  /* CONTACT */
+
+  .contact-billie {
+    min-height: 800px;
+
+    padding: 18vw 6vw;
+  }
+
+  .contact-image {
+    width: 70%;
+    height: 100px;
+  }
+
+  .contact-billie h2 {
+    font-size: 20vw;
+  }
+
+  .contact-dot {
+    left: 18%;
+    top: 28%;
+
+    width: 12px;
+    height: 12px;
+  }
+
+  .contact-bottom {
+    left: 6vw;
+    bottom: 7%;
+
+    gap: 35px;
+  }
+
+  .contact-cta {
+    right: 6vw;
+    bottom: 18%;
+
+    display: block;
+  }
+
+  .contact-cta p {
+    margin-bottom: 12px;
+
+    font-size: 19px;
+  }
+
+  /* FOOTER */
+
+  .footer-billie {
+    padding: 20px 6vw;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+/* =========================================
+   EXTRA MOBILE POLISH
+========================================= */
+
+@media (max-width: 800px) {
+
+  .project-collage {
+  width: 390px;
+  height: 300px;
+
+  top: 47%;
+  }
+
+  .collage-1 {
+    width: 140px;
+    height: 95px;
+
+    top: 20px;
+    left: 10px;
+  }
+
+  .collage-2 {
+    width: 145px;
+    height: 100px;
+
+    top: 5px;
+    right: 10px;
+  }
+
+  .collage-3 {
+    width: 145px;
+    height: 95px;
+
+    bottom: 5px;
+    left: 45px;
+  }
+
+  .collage-4 {
+    width: 125px;
+    height: 90px;
+
+    bottom: 0;
+    right: 35px;
+  }
+
+  .collage-5 {
+    width: 130px;
+    height: 90px;
+
+    top: 85px;
+    left: 130px;
+  }
+
+  .floating-data-card {
+    width: 170px;
+    height: 120px;
+  }
+
+  .work-heading {
+    gap: 0;
+    margin-bottom: 14vw;
+  }
+
+  .work-heading h2 {
+    font-size: 15vw;
+    margin-top: 22px;
+  }
+
+  .work-heading p {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 28px;
+  }
+
+  .project-row {
+    grid-template-columns: 10% 1fr auto;
+    min-height: 115px;
+  }
+
+  .project-title h3 {
+    font-size: 7vw;
+  }
+
+  .project-title span {
+    margin-top: 7px;
+  }
+
+  .project-year {
+    display: none;
+  }
+
+  .hover-project-image {
+    display: none;
+  }
+
+  .about-main {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .about-main h2 {
+    font-size: 17vw;
+  }
+
+  .about-copy .about-lead {
+    font-size: 21px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .current-content {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .current h2 {
+    font-size: 17vw;
+  }
+
+  .contact-billie {
+    min-height: 800px;
+    padding: 18vw 6vw;
+  }
+
+  .contact-billie h2 {
+    font-size: 20vw;
+  }
+
+  .contact-bottom {
+    left: 6vw;
+    bottom: 7%;
+    gap: 35px;
+  }
+
+  .contact-cta {
+    right: 6vw;
+    bottom: 18%;
+
+    display: block;
+  }
+
+  .contact-cta p {
+    margin-bottom: 13px;
+    font-size: 19px;
+  }
+
+  .footer-billie {
+  min-height: 100px;
+
+  padding: 28px 6vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
+  color: #021F94;
+
+  font-size: 20px;
+
+  text-align: center;
+  }
+}
+
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================
+   CUSTOM CURSOR
+========================================= */
+
+/* =========================================
+   BLENDED CUSTOM CURSOR
+========================================= */
+
+.custom-cursor {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  z-index: 9999;
+
+  width: 12px;
+  height: 12px;
+
+  margin-left: -6px;
+  margin-top: -6px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  will-change: transform;
+
+  mix-blend-mode: difference;
+
+  transition:
+    width .22s cubic-bezier(.16,1,.3,1),
+    height .22s cubic-bezier(.16,1,.3,1),
+    margin .22s cubic-bezier(.16,1,.3,1),
+    background .22s cubic-bezier(.16,1,.3,1),
+    color .22s ease;
+}
+.custom-cursor.object {
+  background: transparent;
+  border: 1.5px solid #FFFFFF;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor span,
+.custom-cursor svg {
+  opacity: 0;
+
+  transform: scale(.5);
+
+  transition:
+    opacity .25s ease,
+    transform .3s ease;
+}
+
+
+/* ACTIVE */
+
+.custom-cursor.active {
+  width: 78px;
+  height: 78px;
+
+  margin-left: -39px;
+  margin-top: -39px;
+
+  background: var(--blue);
+
+  color: white;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.custom-cursor.active span,
+.custom-cursor.active svg {
+  opacity: 1;
+
+  transform: scale(1);
+}
+
+.custom-cursor.active {
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.custom-cursor span {
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+}
+
+
+/* =========================================
+   HIDE NORMAL CURSOR ON DESKTOP
+========================================= */
+
+@media (min-width: 801px) {
+
+  body,
+  body * {
+    cursor: none !important;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .custom-cursor {
+    display: none;
+  }
+
+}
+
+/* =========================================
+   INTERACTIVE CURSOR
+========================================= */
+
+.custom-cursor {
+  position: fixed;
+
+  z-index: 9999;
+
+  top: 0;
+  left: 0;
+
+  width: 10px;
+  height: 10px;
+
+  margin-left: -5px;
+  margin-top: -5px;
+
+  border-radius: 50%;
+
+  background: #F7F9FF;
+
+  color: #021F94;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+
+  will-change: transform;
+
+  transition:
+    width .18s cubic-bezier(.16, 1, .3, 1),
+    height .18s cubic-bezier(.16, 1, .3, 1),
+    margin .18s cubic-bezier(.16, 1, .3, 1),
+    background .18s ease,
+    color .18s ease;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.custom-cursor.text {
+  width: 28px;
+  height: 28px;
+
+  margin-left: -14px;
+  margin-top: -14px;
+
+  background: #A9C9FF;
+
+  border: 1px solid rgba(255,255,255,.7);
+}
+
+
+/* =========================
+   PROJECT
+========================= */
+
+.custom-cursor.project {
+  width: 82px;
+  height: 82px;
+
+  margin-left: -41px;
+  margin-top: -41px;
+
+  background: #F7F9FF;
+
+  color: #021F94;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.custom-cursor.project span {
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: .08em;
+}
+
+
+/* =========================
+   DESKTOP ONLY
+========================= */
+
+@media (min-width: 801px) {
+
+  body,
+  body * {
+    cursor: none !important;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .custom-cursor {
+    display: none;
+  }
+
+}
+
+.hero-name h1 {
+  transition:
+    color .25s ease;
+}
+
+.hero-name h1:hover {
+  color: #A9C9FF;
+}
+
+.custom-cursor.normal {
+  width: 10px;
+  height: 10px;
+
+  margin-left: -5px;
+  margin-top: -5px;
+}
+
+/* =========================================
+   SOFT CLEAN UI FONT
+========================================= */
+
+.logo,
+.nav nav button,
+.nav-year,
+.hero-description,
+.hero-scroll,
+.contact-bottom,
+.contact-cta,
+.footer-billie,
+.work-heading > div > span,
+.work-heading p,
+.project-number,
+.project-year,
+.project-title span,
+.about-top,
+.about-copy,
+.services > span,
+.clients > span,
+.current-label,
+.current-content > div span {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   CLEANER SMALL TEXT
+========================================= */
+
+.logo,
+.nav nav button,
+.nav-year,
+.hero-description p,
+.hero-scroll,
+.contact-bottom,
+.contact-bottom a,
+.contact-bottom span,
+.contact-cta p,
+.contact-cta a,
+.footer-billie,
+.footer-billie span,
+.work-heading > div > span,
+.work-heading p,
+.project-number,
+.project-year,
+.project-title span,
+.about-top,
+.about-copy p,
+.services > span,
+.clients > span,
+.current-label,
+.current-content > div span {
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+}
+
+.logo,
+.nav nav button,
+.nav-year {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+}
+.hero-description p {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+.hero-scroll {
+  font-size: 9px !important;
+  font-weight: 500 !important;
+  letter-spacing: .04em !important;
+}
+.contact-bottom,
+.contact-bottom a,
+.contact-bottom span {
+  font-size: 9px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+}
+
+/* =========================================
+   LARGER SMALL UI TEXT
+========================================= */
+
+.logo,
+.nav nav button,
+.nav-year {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+.hero-description p {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+.hero-scroll {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+}
+
+.contact-bottom,
+.contact-bottom a,
+.contact-bottom span {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  line-height: 1.45 !important;
+}
+
+.contact-cta p {
+  font-size: 26px !important;
+}
+
+.contact-cta a {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+}
+
+.footer-billie,
+.footer-billie span {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+}
+
+.work-heading > div > span {
+  font-size: 10px !important;
+}
+
+.work-heading p {
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+.project-number,
+.project-year {
+  font-family: "Manrope", Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #53627D;
+}
+
+.project-title span {
+  font-size: 9px !important;
+}
+
+.about-top {
+  font-size: 10px !important;
+}
+
+.about-copy p {
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+.services > span,
+.clients > span,
+.current-label,
+.current-content > div span {
+  font-size: 10px !important;
+}
+
+@media (max-width: 800px) {
+
+  .logo,
+  .nav nav button,
+  .nav-year {
+    font-size: 11px !important;
+  }
+
+  .hero-description p {
+    font-size: 10px !important;
+  }
+
+  .hero-scroll {
+    font-size: 10px !important;
+  }
+
+  .contact-bottom,
+  .contact-bottom a,
+  .contact-bottom span {
+    font-size: 10px !important;
+  }
+
+  .footer-billie,
+  .footer-billie span {
+    font-size: 9px !important;
+  }
+}
+
+/* =========================================
+   FINAL FOOTER SIZE
+========================================= */
+
+.footer-billie {
+  width: 100% !important;
+
+  min-height: 120px !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  padding: 35px 20px !important;
+
+  background: #ffffff !important;
+  color: #021F94 !important;
+
+  font-family: "DM Sans", Arial, sans-serif !important;
+
+  font-size: 14px !important;
+  font-weight: 600 !important;
+
+  text-align: center !important;
+}
+
+.footer-billie span {
+  display: block !important;
+
+  font-family: "DM Sans", Arial, sans-serif !important;
+
+  font-size: 14px !important;
+  font-weight: 600 !important;
+
+  color: #021F94 !important;
+
+  text-align: center !important;
+}
+
+
+@media (max-width: 800px) {
+
+  .footer-billie {
+    min-height: 105px !important;
+
+    padding: 28px 20px !important;
+
+    font-size: 12px !important;
+  }
+
+  .footer-billie span {
+    font-size: 12px !important;
+  }
+
+}
+
+/* =========================================
+   RESUME
+========================================= */
+
+.resume-section {
+  margin-top: 150px;
+  padding-top: 70px;
+
+  border-top: 1px solid rgba(247, 249, 255, .16);
+}
+
+.resume-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 50px;
+
+  margin-bottom: 90px;
+}
+
+.resume-heading > span {
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: .08em;
+}
+
+.resume-heading p {
+  width: 360px;
+
+  margin: 0;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.6;
+
+  color: #9BA9BD;
+}
+
+
+/* =========================================
+   RESUME BLOCK
+========================================= */
+
+.resume-block {
+  margin-bottom: 120px;
+}
+
+.resume-label {
+  margin-bottom: 45px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: .08em;
+
+  color: #8FB7FF;
+}
+
+
+
+
+/* =========================================
+   ITEM
+========================================= */
+
+.resume-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    25%
+    5%
+    70%;
+
+  padding-bottom: 65px;
+}
+
+.resume-company {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  padding-right: 35px;
+}
+
+.resume-company strong {
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  line-height: 1.15;
+
+  color: #F7F9FF;
+}
+
+.resume-company span {
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  color: #8FB7FF;
+}
+/* COMPANY POSITION */
+.current .resume-company-name {
+  position: relative;
+  left: 45px;
+}
+
+/* =========================================
+   DOT
+========================================= */
+
+.resume-dot {
+  position: relative;
+
+  z-index: 2;
+
+  width: 13px;
+  height: 13px;
+
+  margin-top: 4px;
+
+  justify-self: center;
+
+  border-radius: 50%;
+
+  background: #8FB7FF;
+
+  box-shadow:
+    0 0 0 7px rgba(143, 183, 255, .08);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.resume-content {
+  padding-left: 40px;
+}
+
+.resume-content h3 {
+  margin: 0 0 20px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 22px;
+
+  font-weight: 500;
+
+  line-height: 1.15;
+
+  letter-spacing: -.035em;
+
+  color: #F7F9FF;
+}
+
+.resume-content p {
+  max-width: 720px;
+
+  margin: 0 0 12px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  color: #9BA9BD;
+}
+@media (max-width: 800px) {
+
+  .resume-section {
+    margin-top: 100px;
+    padding-top: 50px;
+  }
+
+  .resume-heading {
+    display: block;
+
+    margin-bottom: 60px;
+  }
+
+  .resume-heading p {
+    width: 100%;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+  }
+
+  .resume-block {
+    margin-bottom: 80px;
+  }
+
+  .resume-label {
+    margin-bottom: 35px;
+  }
+
+  .resume-timeline::before {
+    left: 8px;
+  }
+
+  .resume-item {
+    grid-template-columns: 30px 1fr;
+
+    padding-bottom: 55px;
+  }
+
+  .resume-company {
+    grid-column: 2;
+
+    padding: 0;
+
+    margin-bottom: 16px;
+  }
+
+  .resume-dot {
+    position: absolute;
+
+    left: 2px;
+    top: 0;
+
+    width: 13px;
+    height: 13px;
+  }
+
+  .resume-content {
+    grid-column: 2;
+
+    padding-left: 0;
+  }
+
+  .resume-content h3 {
+    font-size: 18px;
+  }
+
+  .resume-content p {
+    font-size: 12px;
+  }
+
+}
+/* =========================================
+   RESUME SKILLS
+========================================= */
+
+.resume-skills {
+  margin-top: 30px;
+  padding-top: 50px;
+
+  border-top: 1px solid rgba(247, 249, 255, .16);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.skills-list span {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 9px 15px;
+
+  border: 1px solid rgba(247, 249, 255, .18);
+
+  border-radius: 999px;
+
+  color: #F7F9FF;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+
+.resume-item-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+.resume-item-skills span {
+  padding: 7px 12px;
+
+  border: 1px solid rgba(143, 183, 255, .25);
+  border-radius: 999px;
+
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+
+  color: #8FB7FF;
+}
+
+/* =========================================
+   CURRENTLY / RESUME
+========================================= */
+
+.current {
+  position: relative;
+  min-height: 100svh;
+
+  padding: 9vw 3.5vw 10vw;
+
+  background: #B9D9FF;
+  color: #021F94;
+
+  overflow: hidden;
+}
+
+.current-label {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: #021F94;
+}
+
+.resume-section {
+  margin-top: 100px;
+}
+
+.resume-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 40px;
+
+  margin-bottom: 90px;
+}
+
+.resume-heading h2 {
+  margin: 0;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: clamp(5rem, 10vw, 11rem);
+
+  font-weight: 500;
+
+  line-height: .82;
+
+  letter-spacing: -.075em;
+
+  color: #021F94;
+}
+
+.resume-heading p {
+  width: 330px;
+
+  margin: 0;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  color: rgba(2, 31, 148, .65);
+}
+
+.resume-block {
+  margin-bottom: 100px;
+}
+
+.resume-label {
+  margin-bottom: 30px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: .08em;
+
+  color: rgba(2, 31, 148, .55);
+}
+
+.resume-list {
+  border-top: 1px solid rgba(2, 31, 148, .18);
+}
+
+.resume-row {
+  display: grid;
+
+  grid-template-columns: 7% 1fr auto;
+
+  gap: 30px;
+
+  padding: 34px 0;
+
+  border-bottom: 1px solid rgba(2, 31, 148, .15);
+}
+
+.resume-number {
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: rgba(2, 31, 148, .5);
+}
+
+.resume-main h3 {
+  margin: 0 0 8px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: clamp(1.5rem, 2.2vw, 2.4rem);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -.045em;
+
+  color: #021F94;
+}
+
+.resume-main strong {
+  display: block;
+
+  margin-bottom: 14px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #3153B7;
+}
+
+.resume-main p {
+  max-width: 720px;
+
+  margin: 0;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  color: rgba(2, 31, 148, .7);
+}
+
+.resume-period {
+  min-width: 130px;
+
+  padding-top: 4px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  text-align: right;
+
+  color: rgba(2, 31, 148, .65);
+}
+
+.resume-item-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+.resume-item-skills span,
+.skills-list span {
+  display: inline-flex;
+
+  padding: 8px 13px;
+
+  border: 1px solid rgba(2, 31, 148, .2);
+
+  border-radius: 999px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  color: #021F94;
+
+  background: rgba(255,255,255,.18);
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media (max-width: 800px) {
+
+  .current {
+    min-height: auto;
+    padding: 18vw 6vw 20vw;
+  }
+
+  .resume-section {
+    margin-top: 70px;
+  }
+
+  .resume-heading {
+    display: block;
+    margin-bottom: 60px;
+  }
+
+  .resume-heading h2 {
+    font-size: 17vw;
+  }
+
+  .resume-heading p {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  .resume-block {
+    margin-bottom: 75px;
+  }
+
+  .resume-row {
+    grid-template-columns: 30px 1fr;
+    gap: 15px;
+
+    padding: 28px 0;
+  }
+
+  .resume-number {
+    padding-top: 4px;
+  }
+
+  .resume-period {
+    grid-column: 2;
+
+    min-width: auto;
+
+    padding-top: 0;
+
+    text-align: left;
+
+    font-size: 10px;
+  }
+
+  .resume-main h3 {
+    font-size: 7vw;
+    line-height: .95;
+  }
+
+  .resume-main p {
+    font-size: 12px;
+  }
+
+}
+
+/* =========================================
+   CURRENTLY / RESUME
+========================================= */
+
+.current {
+  position: relative;
+
+  min-height: 100svh;
+
+  padding: 9vw 3.5vw 12vw;
+
+  background: #B9D9FF;
+
+  color: #021F94;
+
+  overflow: hidden;
+}
+
+.current-label {
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: .08em;
+
+  color: #021F94;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.currently-heading {
+  margin-top: 80px;
+
+  margin-bottom: 110px;
+}
+
+.currently-heading h2 {
+  margin: 0;
+
+  max-width: 850px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: clamp(4rem, 8vw, 9rem);
+
+  font-weight: 500;
+
+  line-height: .88;
+
+  letter-spacing: -.07em;
+
+  color: #021F94;
+}
+
+.currently-heading em {
+  font-style: normal;
+}
+
+
+/* =========================================
+   GROUP
+========================================= */
+
+.currently-group {
+  margin-bottom: 120px;
+}
+
+.currently-group-label {
+  margin-bottom: 32px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: .08em;
+
+  color: rgba(2,31,148,.6);
+}
+
+
+/* =========================================
+   LIST
+========================================= */
+
+.currently-list {
+  border-top: 1px solid rgba(2,31,148,.18);
+}
+
+.currently-item {
+  display: grid;
+
+  grid-template-columns: 7% 1fr 180px;
+
+  gap: 30px;
+
+  padding: 40px 0;
+
+  border-bottom: 1px solid rgba(2,31,148,.18);
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.currently-number {
+  padding-top: 5px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: rgba(2,31,148,.5);
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.currently-main h3 {
+  margin: 0 0 10px;
+
+  max-width: 850px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: clamp(1.6rem, 2.5vw, 2.8rem);
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -.045em;
+
+  color: #021F94;
+}
+
+.currently-main strong {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #3457B8;
+}
+
+.currently-main p {
+  max-width: 760px;
+
+  margin: 0;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  color: rgba(2,31,148,.7);
+}
+
+
+/* =========================================
+   PERIOD
+========================================= */
+
+.currently-period {
+  padding-top: 5px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  text-align: right;
+
+  color: rgba(2,31,148,.62);
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.currently-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.currently-tags span {
+  padding: 7px 12px;
+
+  border: 1px solid rgba(2,31,148,.2);
+
+  border-radius: 999px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  color: #021F94;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.currently-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.currently-skills span {
+  padding: 10px 15px;
+
+  border: 1px solid rgba(2,31,148,.2);
+
+  border-radius: 999px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  color: #021F94;
+}
+
+@media (max-width: 800px) {
+
+  .current {
+    padding: 18vw 6vw 20vw;
+  }
+
+  .currently-heading {
+    margin-top: 60px;
+    margin-bottom: 70px;
+  }
+
+  .currently-heading h2 {
+    font-size: 15vw;
+    line-height: .9;
+  }
+
+  .currently-group {
+    margin-bottom: 80px;
+  }
+
+  .currently-item {
+    grid-template-columns: 30px 1fr;
+
+    gap: 12px;
+
+    padding: 28px 0;
+  }
+
+  .currently-number {
+    grid-column: 1;
+  }
+
+  .currently-main {
+    grid-column: 2;
+  }
+
+  .currently-main h3 {
+    font-size: 7vw;
+    line-height: .95;
+  }
+
+  .currently-main p {
+    font-size: 12px;
+  }
+
+  .currently-period {
+    grid-column: 2;
+
+    padding-top: 10px;
+
+    text-align: left;
+
+    font-size: 10px;
+  }
+
+  .currently-tags span {
+    font-size: 9px;
+  }
+
+  .currently-skills span {
+    font-size: 11px;
+  }
+
+}
+/* =========================================
+   CURRENTLY / RESUME TIMELINE
+========================================= */
+
+.current {
+  background: #B9D9FF;
+  color: #021F94;
+  padding: 7vw 4vw 8vw;
+}
+
+.current-header {
+  margin-bottom: 90px;
+}
+
+.current-header > span,
+.resume-section-title {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+
+.current-header h2 {
+  margin: 0;
+
+  position: relative;
+  left: 510px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: clamp(3rem, 5vw, 5.5rem);
+
+  font-weight: 500;
+
+  line-height: .9;
+
+  letter-spacing: -.06em;
+
+  color: #021F94;
+}
+
+.resume-section {
+  margin-bottom: 65px;
+}
+
+.resume-section-title {
+  margin-bottom: 28px;
+  color: rgba(2,31,148,.6);
+}
+
+.resume-timeline {
+  position: relative;
+}
+
+.resume-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: 25%;
+
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  background: rgba(2,31,148,.22);
+}
+
+.resume-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 25% 50px 1fr;
+
+  gap: 18px;
+
+  min-height: 95px;
+
+  padding-bottom: 35px;
+}
+
+.resume-left {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  padding-right: 20px;
+}
+
+.resume-left strong {
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  line-height: 1.25;
+
+  color: #021F94;
+}
+
+.resume-left span {
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  color: #3153B7;
+}
+
+.resume-dot {
+  position: relative;
+  z-index: 2;
+
+  width: 12px;
+  height: 12px;
+
+  margin-top: 3px;
+
+  justify-self: center;
+
+  border-radius: 50%;
+
+  background: #021F94;
+}
+
+.resume-right {
+  padding-left: 10px;
+}
+
+.resume-right h3 {
+  margin: 0 0 8px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  letter-spacing: -.03em;
+
+  color: #021F94;
+}
+
+.resume-right p {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: rgba(2,31,148,.68);
+}
+
+.resume-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+.resume-tags span {
+  padding: 7px 12px;
+
+  border: 1px solid rgba(2,31,148,.2);
+
+  border-radius: 999px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  color: #021F94;
+}
+
+.resume-skills {
+  margin-top: 0;
+}
+@media (max-width: 800px) {
+
+  .current {
+    padding: 16vw 6vw 18vw;
+  }
+
+  .current-header {
+    margin-bottom: 65px;
+  }
+
+  .current-header h2 {
+    font-size: 15vw;
+  }
+
+  .resume-section {
+    margin-bottom: 75px;
+  }
+
+  .resume-timeline::before {
+    left: 7px;
+  }
+
+  .resume-item {
+    grid-template-columns: 25px 1fr;
+
+    gap: 12px;
+
+    min-height: auto;
+
+    padding-bottom: 40px;
+  }
+
+  .resume-dot {
+    position: absolute;
+
+    left: 2px;
+    top: 3px;
+  }
+
+  .resume-left {
+    grid-column: 2;
+    padding: 0;
+
+    margin-bottom: 8px;
+  }
+
+  .resume-right {
+    grid-column: 2;
+    padding: 0;
+  }
+
+  .resume-right h3 {
+    font-size: 6vw;
+  }
+
+  .resume-right p {
+    font-size: 12px;
+  }
+
+}
+
+/* =========================================
+   CURRENTLY — WHITE RESUME
+========================================= */
+
+.current {
+  position: relative;
+
+  background: #ffffff !important;
+  color: #021F94;
+
+  padding: 8vw 4vw 10vw;
+
+  overflow: hidden;
+}
+
+.current-header {
+  margin-bottom: 90px;
+}
+
+.current-header > span {
+  display: block;
+
+  margin-bottom: 22px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: .08em;
+
+  color: #021F94;
+}
+
+.current-header h2 {
+  margin: 0;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: clamp(3rem, 5vw, 5.5rem);
+
+  font-weight: 500;
+
+  line-height: .9;
+
+  letter-spacing: -.06em;
+
+  color: #021F94;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.resume-section {
+  margin-bottom: 85px;
+}
+
+.resume-section-title {
+  margin-bottom: 28px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: .08em;
+
+  color: #61708B;
+}
+
+
+/* =========================================
+   STRAIGHT TIMELINE
+========================================= */
+
+.resume-timeline {
+  position: relative;
+}
+
+.resume-timeline {
+  position: relative;
+
+  --timeline-x: calc(24% + 45.5px);
+}
+
+.resume-timeline::before {
+  content: "";
+
+  position: absolute;
+
+  left: var(--timeline-x);
+
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  background: #D5DDEB;
+}
+
+
+/* =========================================
+   RESUME ITEM
+========================================= */
+
+.resume-item {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 24% 55px 1fr;
+
+  gap: 18px;
+
+  padding-bottom: 48px;
+}
+
+
+/* =========================================
+   LEFT
+========================================= */
+
+.current .resume-left {
+  position: relative;
+  left: 80px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  padding-right: 20px;
+}
+
+.current .resume-left strong {
+  font-size: 18px;
+}
+
+.current .resume-left span {
+  font-size: 13px;
+}
+
+.current .resume-right h3 {
+  font-size: clamp(1.7rem, 2.2vw, 2.2rem);
+}
+
+.current .resume-right p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.resume-left span {
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  color: #71809A;
+}
+
+
+/* =========================================
+   DIFFERENT MARKER
+========================================= */
+
+.resume-dot {
+  position: relative;
+
+  z-index: 2;
+
+  width: 10px;
+  height: 10px;
+
+  margin-top: 4px;
+
+  justify-self: center;
+
+  background: #021F94;
+
+  border-radius: 2px;
+
+  transition:
+    transform .3s cubic-bezier(.16,1,.3,1);
+}
+
+.resume-item:hover .resume-dot {
+  transform: scale(1.5) rotate(45deg);
+}
+
+
+/* =========================================
+   RIGHT
+========================================= */
+
+.resume-right {
+  padding-left: 5px;
+}
+
+.resume-right h3 {
+  margin: 0 0 10px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: clamp(1.25rem, 1.7vw, 1.7rem);
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  letter-spacing: -.035em;
+
+  color: #021F94;
+
+  transition:
+    transform .35s cubic-bezier(.16,1,.3,1);
+}
+
+.resume-item:hover .resume-right h3 {
+  transform: translateX(5px);
+}
+
+.resume-right p {
+  max-width: 680px;
+
+  margin: 0;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  color: #66758F;
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.resume-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 15px;
+}
+
+.resume-tags span {
+  padding: 6px 10px;
+
+  border: 1px solid #D5DDEB;
+
+  border-radius: 999px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  color: #3153B7;
+
+  background: #F7F9FC;
+}
+@media (max-width: 800px) {
+
+  .current {
+    padding: 16vw 6vw 18vw;
+  }
+
+  .current-header {
+    margin-bottom: 65px;
+  }
+
+  .current-header h2 {
+    font-size: 15vw;
+  }
+
+  .resume-section {
+    margin-bottom: 70px;
+  }
+
+  .resume-timeline::before {
+    left: 7px;
+  }
+
+  .resume-item {
+    grid-template-columns: 25px 1fr;
+
+    gap: 12px;
+
+    padding-bottom: 38px;
+  }
+
+  .resume-left {
+    grid-column: 2;
+
+    padding: 0;
+
+    margin-bottom: 5px;
+  }
+
+  .resume-dot {
+    position: absolute;
+
+    left: 2px;
+    top: 3px;
+  }
+
+  .resume-right {
+    grid-column: 2;
+
+    padding: 0;
+  }
+
+  .resume-right h3 {
+    font-size: 6vw;
+  }
+
+  .resume-right p {
+    font-size: 12px;
+  }
+
+}
+
+/* JOB TITLE */
+.current .resume-right h3 {
+  font-size: clamp(1.45rem, 2vw, 2rem);
+}
+
+/* SKILLS */
+.current .resume-skill-section .resume-skills span {
+  font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+  font-weight: 500;
+}
+
+/* SKILLS - LARGE HIGHLIGHT */
+.current .resume-tags.resume-skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+}
+
+.current .resume-tags.resume-skills span {
+  display: flex;
+  align-items: center;
+
+  min-height: 70px;
+  padding: 12px 16px;
+
+  border: 0;
+  border-bottom: 1px solid #D9E0EC;
+  border-radius: 0;
+
+  background: transparent;
+
+  font-family: "Manrope", Arial, sans-serif !important;
+
+  font-size: 30px !important;
+  font-weight: 500 !important;
+
+  line-height: 1.1;
+  letter-spacing: -.03em;
+
+  color: #021F94;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s ease;
+}
+
+.current .resume-tags.resume-skills span:hover {
+  background: #021F94;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   SECTION LABELS — LARGER & BALANCED
+========================================= */
+
+/* EXPERIENCE / EDUCATION / SKILLS */
+.current .resume-section-title {
+  font-size: 28px !important;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  color: #021F94;
+}
+
+/* HELLO THERE */
+.about-top span:first-child {
+  font-size: 28px !important;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+.about-main {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-photo {
+  width: 300px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* ABOUT PHOTO */
+.about-billie .about-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 70px;
+  align-items: center;
+}
+
+.about-billie .about-photo {
+  display: block;
+  width: 300px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.about-billie .about-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* =========================================
+   ABOUT - CENTERED & LIGHTER
+========================================= */
+
+.about-billie {
+  background:
+    linear-gradient(
+      140deg,
+      rgba(11, 32, 53, 0.96),
+      rgba(59, 142, 243, 0.18)
+    ),
+    #0b2035;
+}
+
+.about-billie .about-main {
+  width: min(1180px, 100%);
+  margin: 7vw auto 0;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+.about-billie .about-photo {
+  width: 300px;
+  height: 380px;
+
+  justify-self: center;
+
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.about-billie .about-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+/* ABOUT CONTENT - CENTER */
+.about-billie .about-main {
+  width: min(1050px, 100%);
+
+  margin: 7vw auto 0;
+
+  display: grid;
+  grid-template-columns: 520px 300px;
+
+  justify-content: center;
+  align-items: center;
+
+  column-gap: 90px;
+}
+
+.about-billie .about-copy {
+  padding-top: 0;
+}
+
+.about-billie .about-photo {
+  width: 300px;
+  height: 380px;
+
+  justify-self: center;
+
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.about-billie .about-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+/* =========================================
+   ABOUT CARD
+========================================= */
+
+.about-billie {
+  background: #0b2035;
+  padding: 8vw 3.5vw 10vw;
+}
+
+.about-top {
+  margin-bottom: 45px;
+}
+
+.about-top span {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: #aaa7a0;
+}
+
+.about-card {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 260px;
+
+  gap: 55px;
+  align-items: center;
+
+  padding: 55px;
+
+  background: #f7f9ff;
+  color: #021F94;
+
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 24px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,.16);
+}
+
+.about-card-title h2 {
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+
+  font-size: clamp(3rem, 5.5vw, 6rem);
+
+  font-weight: 500;
+  line-height: .88;
+
+  letter-spacing: -.075em;
+
+  color: #021F94;
+}
+
+.about-card-title h2 em {
+  font-style: normal;
+}
+
+.about-card-content {
+  align-self: center;
+}
+
+.about-card-content .about-lead {
+  margin: 0 0 22px;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.45;
+
+  color: #021F94;
+}
+
+.about-card-content p:not(.about-lead) {
+  margin: 0;
+
+  max-width: 470px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 20px;
+  line-height: 1.8;
+
+  color: #65738b;
+}
+
+.about-card-photo {
+  width: 260px;
+  height: 330px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #dce8f8;
+}
+
+.about-card-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform .5s cubic-bezier(.16,1,.3,1);
+}
+
+.about-card-photo:hover img {
+  transform: scale(1.04);
+}
+@media (max-width: 800px) {
+
+  .about-card {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding: 32px;
+  }
+
+  .about-card-title h2 {
+    font-size: 17vw;
+  }
+
+  .about-card-photo {
+    width: 100%;
+    max-width: 280px;
+    height: 340px;
+  }
+
+}
+/* =========================================
+   ABOUT CARD FINAL
+========================================= */
+
+.about-billie {
+  background: #0b2035;
+  padding: 8vw 3.5vw 10vw;
+}
+
+/* HELLO THERE SEJAJAR DENGAN CARD */
+.about-billie .about-top {
+  width: min(1180px, 100%);
+  margin: 0 auto 28px;
+}
+
+.about-billie .about-top span {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: #aaa7a0;
+}
+
+
+/* CARD */
+.about-card {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 260px;
+
+  gap: 55px;
+  align-items: center;
+
+  padding: 55px;
+
+  background: #f7f9ff;
+  color: #021F94;
+
+  border-radius: 24px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,.14);
+}
+
+
+/* NAMA */
+.about-card-title h2 {
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+
+  font-size: clamp(4rem, 6vw, 6.5rem);
+
+  font-weight: 500;
+
+  line-height: .82;
+
+  letter-spacing: -.075em;
+
+  color: #021F94;
+}
+
+.about-card-title h2 em {
+  font-style: normal;
+}
+
+
+/* DESKRIPSI */
+.about-card-content {
+  align-self: center;
+}
+
+.about-card-content .about-lead {
+  margin: 0 0 22px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  line-height: 1.45;
+
+  color: #021F94;
+}
+
+.about-card-content p:not(.about-lead) {
+  margin: 0;
+
+  max-width: 470px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: #65738b;
+}
+
+
+/* FOTO */
+.about-card-photo {
+  width: 260px;
+  height: 330px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #dce8f8;
+}
+
+.about-card-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform .5s cubic-bezier(.16,1,.3,1);
+}
+
+.about-card-photo:hover img {
+  transform: scale(1.04);
+}
+/* =========================================
+   ABOUT CARD FINAL
+========================================= */
+
+.about-billie {
+  background: #0b2035;
+  padding: 8vw 3.5vw 10vw;
+}
+
+/* HELLO THERE SEJAJAR DENGAN CARD */
+.about-billie .about-top {
+  width: min(1180px, 100%);
+  margin: 0 auto 28px;
+}
+
+.about-billie .about-top span {
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: #aaa7a0;
+}
+
+
+/* CARD */
+.about-card {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr 1fr 260px;
+
+  gap: 55px;
+  align-items: center;
+
+  padding: 55px;
+
+  background: #f7f9ff;
+  color: #021F94;
+
+  border-radius: 24px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,.14);
+}
+
+
+/* NAMA */
+.about-card-title h2 {
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+
+  font-size: clamp(4rem, 6vw, 6.5rem);
+
+  font-weight: 500;
+
+  line-height: .82;
+
+  letter-spacing: -.075em;
+
+  color: #021F94;
+}
+
+.about-card-title h2 em {
+  font-style: normal;
+}
+
+
+/* DESKRIPSI */
+.about-card-content {
+  align-self: center;
+}
+
+.about-card-content .about-lead {
+  margin: 0 0 22px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  line-height: 1.45;
+
+  color: #021F94;
+}
+
+.about-card-content p:not(.about-lead) {
+  margin: 0;
+
+  max-width: 470px;
+
+  font-family: "Manrope", Arial, sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  color: #65738b;
+}
+
+
+/* FOTO */
+.about-card-photo {
+  width: 260px;
+  height: 330px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: #dce8f8;
+}
+
+.about-card-photo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform .5s cubic-bezier(.16,1,.3,1);
+}
+
+.about-card-photo:hover img {
+  transform: scale(1.04);
+}
+.about-card-title h2 {
+  margin: 0;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+
+  font-size: clamp(3.5rem, 5vw, 5.5rem);
+
+  font-weight: 500;
+  line-height: .82;
+  letter-spacing: -.075em;
+
+  color: #06325c;
+}
+.about-card-title h2 em {
+  font-style: italic;
+  font-weight: 400;
+}
+/* ALIGN RESUME SECTION HEADINGS */
+.current .resume-section-title {
+  margin-left: 4.2vw;
+}
+.current .resume-skills {
+  margin-left: 0;
+}
+
+.current .resume-skills span {
+  padding-left: 0 !important;
+}
+/* ONLY MOVE SKILLS CONTENT */
+.current .resume-skills {
+  margin-left: 80px !important;
+  width: calc(100% - 80px);
+}
+
+.project-preview {
+  position: fixed;
+  left: 60%;
+  top: 45%;
+  width: 520px;
+  height: 330px;
+
+  transform: translate(-50%, -50%) scale(.9);
+
+  overflow: hidden;
+  border-radius: 14px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  z-index: 1000;
+
+  transition:
+    opacity .3s ease,
+    transform .35s ease;
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-row:hover .project-preview {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* =========================================================
+   PORTFOLIO REFRESH — SIMPLE / EDITORIAL / LESS EMPTY
+   Added as a final override so the existing styles stay intact.
+========================================================= */
+:root {
+  --ink: #0a1f55;
+  --ink-soft: #4f6385;
+  --paper: #f4f7fc;
+  --blue-wash: #e8f0ff;
+  --line: rgba(10,31,85,.14);
+}
+
+body,
+.site {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.nav {
+  height: 68px;
+  padding: 0 4vw;
+  color: var(--ink);
+  mix-blend-mode: normal;
+  border-bottom: 1px solid rgba(10,31,85,.10);
+  background: rgba(244,247,252,.82);
+  backdrop-filter: blur(14px);
+}
+.nav .logo,
+.nav nav button,
+.nav .menu { color: var(--ink); }
+.nav nav { gap: 26px; }
+.nav nav button { font-size: 11px !important; }
+.logo { font-size: 11px !important; letter-spacing: .05em; }
+
+.billie-hero {
+  min-height: 720px;
+  height: 92svh;
+  padding: 110px 4vw 44px;
+  justify-content: space-between;
+  background:
+    radial-gradient(circle at 75% 32%, rgba(81,133,225,.13), transparent 30%),
+    linear-gradient(180deg, #eef4ff 0%, #f8faff 100%);
+  color: var(--ink);
+}
+.hero-kicker {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: #5e7398;
+}
+.hero-layout {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+  align-items: end;
+  gap: 7vw;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.hero-name { justify-content: flex-start; }
+.hero-name h1 {
+  font-size: clamp(6rem, 14vw, 13rem);
+  line-height: .76;
+  color: var(--ink);
+  letter-spacing: -.095em;
+  animation: none;
+}
+.hero-name h1 em { font-style: normal; color: #4774c8; }
+.hero-description {
+  position: static;
+  width: min(410px,100%);
+  transform: none;
+  text-align: left;
+  align-self: end;
+  margin-bottom: 4px;
+}
+.hero-description p {
+  margin-bottom: 24px;
+  color: #415574;
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+}
+.hero-primary {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: white;
+  border-radius: 999px;
+  padding: 13px 17px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  transition: transform .25s ease, background .25s ease;
+}
+.hero-primary:hover { transform: translateY(-2px); background: #17346f; }
+.hero-stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: .04em;
+  color: #687b9b;
+}
+.hero-stats span + span { text-align: center; }
+.hero-stats span:last-child { text-align: right; }
+.hero-stats strong { color: var(--ink); font-weight: 700; }
+.hero-scroll {
+  left: auto;
+  right: 4vw;
+  bottom: 44px;
+  color: var(--ink);
+  font-size: 10px !important;
+  letter-spacing: .07em !important;
+}
+
+.work-billie {
+  background: var(--blue-wash);
+  color: var(--ink);
+  padding: 9vw 4vw 7vw;
+}
+.work-heading {
+  max-width: 1240px;
+  margin: 0 auto 64px;
+  gap: 6vw;
+  align-items: end;
+}
+.work-heading h2 {
+  margin-top: 20px;
+  font-size: clamp(4rem, 8vw, 8.5rem);
+  line-height: .83;
+  color: var(--ink);
+}
+.work-heading h2 em { color: #4774c8; }
+.work-heading p {
+  width: min(330px,100%);
+  color: #637593;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+}
+.work-heading > div > span { color: #5d7499; }
+
+.project-list {
+  max-width: 1240px;
+  margin: 0 auto;
+  border-top: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 18px;
+}
+.project-row {
+  min-height: 0;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 12px 16px;
+  align-items: start;
+  background: rgba(255,255,255,.66);
+  border: 1px solid rgba(10,31,85,.11);
+  border-radius: 22px;
+  transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
+}
+.project-row:hover {
+  padding: 18px;
+  transform: translateY(-4px);
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(35,65,125,.11);
+}
+.project-number {
+  padding-top: 4px;
+  color: #7e90ab;
+  font-size: 12px;
+}
+.project-visual {
+  grid-column: 2;
+  width: 100%;
+  height: 230px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #dbe7fa;
+  border: 1px solid rgba(10,31,85,.08);
+}
+.project-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s cubic-bezier(.16,1,.3,1);
+}
+.project-row:hover .project-visual img { transform: scale(1.035); }
+.project-title {
+  grid-column: 2;
+  display: block;
+  padding-bottom: 4px;
+}
+.project-title span {
+  margin: 0 0 7px;
+  color: #7183a0;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em !important;
+}
+.project-title h3 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.25vw, 2.15rem);
+  line-height: 1.04;
+  letter-spacing: -.045em;
+  color: var(--ink);
+  transition: color .25s ease;
+}
+.project-title small {
+  display: block;
+  margin-top: 11px;
+  color: #7a8ba8;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.project-arrow {
+  grid-column: 2;
+  justify-self: end;
+  align-self: end;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(10,31,85,.16);
+  border-radius: 50%;
+  color: var(--ink);
+  background: white;
+}
+.project-row:hover .project-arrow {
+  transform: rotate(45deg) scale(1.03);
+}
+.project-preview { display: none !important; }
+.work-footer-note {
+  max-width: 1240px;
+  margin: 28px auto 0;
+  color: #73839d;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 11px;
+}
+
+.about-billie {
+  background: #0b2035;
+  padding: 8vw 4vw 9vw;
+}
+.about-billie .about-top { max-width: 1240px; }
+.about-card {
+  max-width: 1240px;
+  grid-template-columns: .9fr 1.1fr 220px;
+  gap: 48px;
+  padding: 44px;
+  border-radius: 22px;
+}
+.about-card-photo { width: 220px; height: 280px; }
+.about-card-title h2 { font-size: clamp(3.5rem,5.5vw,5.5rem); }
+.about-card-content .about-lead { font-size: 18px; }
+.about-card-content p:not(.about-lead) { font-size: 14px; line-height: 1.7; }
+
+.current {
+  background: #fff !important;
+  padding: 8vw 4vw 9vw;
+  color: var(--ink);
+}
+.current-header { max-width: 1240px; margin: 0 auto 70px; }
+.current-header h2 {
+  color: var(--ink);
+  font-size: clamp(4rem, 7vw, 7rem);
+  position: static;
+  letter-spacing: -.075em;
+}
+.resume-section {
+  max-width: 1240px;
+  margin: 0 auto 42px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(10,31,85,.12);
+}
+.current .resume-section-title { margin-left: 0; color: #71829d; font-size: 10px; }
+.resume-timeline::before { left: 23.5%; background: rgba(10,31,85,.12); }
+.resume-item { grid-template-columns: 23.5% 50px 1fr; gap: 18px; padding-bottom: 30px; }
+.resume-left strong, .resume-right h3 { color: var(--ink); }
+.resume-left span, .resume-right p { color: #6c7d99; }
+.resume-dot { background: #4b79d2; box-shadow: 0 0 0 7px rgba(75,121,210,.08); }
+.resume-tags span { color: var(--ink); border-color: rgba(10,31,85,.15); background: #f8faff; }
+
+.contact-billie {
+  min-height: 620px;
+  padding: 7vw 4vw 36px;
+  background: #0b2035;
+}
+.contact-billie h2 {
+  font-size: clamp(5rem, 12vw, 12rem);
+  letter-spacing: -.1em;
+}
+.contact-bottom { left: 4vw; bottom: 6%; }
+.contact-cta { right: 4vw; bottom: 6%; }
+.footer-billie { min-height: 86px !important; padding: 22px 4vw !important; }
+
+@media (max-width: 800px) {
+  .nav { padding: 0 6vw; }
+  .billie-hero { min-height: 760px; height: auto; padding: 100px 6vw 34px; }
+  .hero-layout { grid-template-columns: 1fr; gap: 40px; margin-top: 90px; margin-bottom: 60px; }
+  .hero-name h1 { font-size: 25vw; }
+  .hero-description { width: 100%; }
+  .hero-description p { font-size: 15px !important; }
+  .hero-stats { grid-template-columns: 1fr; gap: 9px; }
+  .hero-stats span, .hero-stats span + span, .hero-stats span:last-child { text-align: left; }
+  .hero-scroll { right: auto; left: 6vw; bottom: 22px; }
+  .work-billie { padding: 18vw 6vw 14vw; }
+  .work-heading { margin-bottom: 38px; }
+  .work-heading h2 { font-size: 17vw; }
+  .work-heading p { width: 100%; margin-top: 25px; }
+  .project-list { grid-template-columns: 1fr; gap: 14px; }
+  .project-row { padding: 14px; border-radius: 18px; }
+  .project-row:hover { padding: 14px; }
+  .project-visual { height: 205px; }
+  .project-title h3 { font-size: 7vw; }
+  .about-billie, .current { padding-left: 6vw; padding-right: 6vw; }
+  .about-card { padding: 28px; border-radius: 18px; }
+  .about-card-photo { width: 100%; max-width: 280px; height: 330px; }
+  .current-header { margin-bottom: 55px; }
+  .current-header h2 { font-size: 16vw; }
+  .resume-section { padding-top: 22px; margin-bottom: 44px; }
+  .resume-timeline::before { left: 7px; }
+  .resume-item { grid-template-columns: 25px 1fr; gap: 12px; }
+  .resume-left { grid-column: 2; }
+  .resume-right { grid-column: 2; padding-left: 0; }
+  .resume-dot { position: absolute; left: 2px; top: 3px; }
+  .contact-billie { min-height: 720px; padding: 18vw 6vw 30px; }
+  .contact-billie h2 { font-size: 20vw; }
+  .contact-bottom { left: 6vw; bottom: 5%; }
+  .contact-cta { right: 6vw; bottom: 17%; }
+}
+
+
+/* ================================
+   FINAL NAVBAR SIZE
+================================ */
+
+.nav {
+  height: 90px !important;
+  padding: 0 4vw !important;
+}
+
+.logo {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.nav nav {
+  gap: 45px !important;
+}
+
+.nav nav button {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+/* =================================
+   HERO STATS — BIGGER & CENTERED
+================================= */
+
+.hero-stats {
+  position: absolute !important;
+  left: 3.5vw !important;
+  right: 3.5vw !important;
+  bottom: 5.5% !important;
+
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr !important;
+  align-items: center !important;
+
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+.hero-stats span {
+  font-size: 14px !important;
+}
+
+.hero-stats span:first-child {
+  text-align: left !important;
+}
+
+.hero-stats span:nth-child(2) {
+  text-align: center !important;
+}
+
+.hero-stats strong {
+  font-weight: 700 !important;
+}
+
+/* SCROLL TO EXPLORE DI KANAN */
+.hero-scroll {
+  position: absolute !important;
+  right: 3.5vw !important;
+  left: auto !important;
+  bottom: 5.5% !important;
+
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+/* FOTO DI ATAS DESKRIPSI */
+.hero-photo {
+  position: relative !important;
+
+  width: 250px !important;
+  height: 300px !important;
+
+  margin-bottom: 22px !important;
+
+  overflow: hidden !important;
+  border-radius: 10px !important;
+
+  box-shadow: 0 12px 30px rgba(6, 21, 79, 0.12);
+
+  z-index: 5;
+}
+
+.hero-photo img {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block !important;
+
+  object-fit: cover !important;
+  object-position: center 35% !important;
+}
+
+/* ================================
+   HERO BOTTOM — SEJAJAR
+================================ */
+
+.hero-stats {
+  position: absolute !important;
+  left: 4vw !important;
+  bottom: 6% !important;
+
+  margin: 0 !important;
+}
+
+.hero-stats span {
+  font-size: 14px !important;
+}
+
+/* Scroll tetap di kanan */
+.hero-scroll {
+  position: absolute !important;
+  right: 4vw !important;
+  left: auto !important;
+  bottom: 6% !important;
+
+  margin: 0 !important;
+  font-size: 14px !important;
+}
+/* =========================================
+   RESUME — ALIGNMENT FIX
+========================================= */
+
+/* EXPERIENCE */
+.current .resume-item {
+  display: grid !important;
+  grid-template-columns: 28% 55px minmax(0, 1fr) !important;
+  column-gap: 0 !important;
+
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.current .resume-left {
+  position: static !important;
+
+  padding-right: 30px !important;
+  min-width: 0 !important;
+}
+
+.current .resume-left strong,
+.current .resume-left span {
+  display: block !important;
+}
+
+.current .resume-right {
+  padding-left: 5px !important;
+  min-width: 0 !important;
+}
+
+.current .resume-right h3 {
+  margin: 0 0 10px !important;
+
+  font-size: clamp(1.5rem, 2.1vw, 2.2rem) !important;
+  line-height: 1.15 !important;
+
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+.current .resume-right p {
+  max-width: 100% !important;
+
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+
+  white-space: normal !important;
+}
+
+/* DOT TIMELINE */
+.current .resume-dot {
+  justify-self: center !important;
+  align-self: start !important;
+
+  margin-top: 3px !important;
+}
+
+
+/* =========================================
+   SKILLS — ALIGN WITH CONTENT
+========================================= */
+
+.current .resume-skills {
+  margin-left: 0 !important;
+
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+
+  width: 100% !important;
+}
+
+.current .resume-skills span {
+  justify-content: flex-start !important;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.current .resume-section-title {
+  margin-left: 0 !important;
+}
+/* =========================================
+   RESUME RESET — CLEAN ALIGNMENT
+========================================= */
+
+.current .resume-timeline {
+  position: relative !important;
+  --timeline-x: calc(24% + 45.5px) !important;
+}
+
+.current .resume-timeline::before {
+  content: "" !important;
+
+  position: absolute !important;
+
+  left: var(--timeline-x) !important;
+  top: 0 !important;
+  bottom: 0 !important;
+
+  width: 1px !important;
+
+  background: #D5DDEB !important;
+}
+
+.current .resume-item {
+  position: relative !important;
+
+  display: grid !important;
+
+  grid-template-columns: 24% 55px minmax(0, 1fr) !important;
+
+  gap: 18px !important;
+
+  width: 100% !important;
+
+  padding-bottom: 48px !important;
+}
+
+.current .resume-left {
+  position: static !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  gap: 7px !important;
+
+  padding-right: 20px !important;
+}
+
+.current .resume-dot {
+  position: relative !important;
+
+  left: auto !important;
+  top: auto !important;
+
+  width: 10px !important;
+  height: 10px !important;
+
+  margin-top: 4px !important;
+
+  justify-self: center !important;
+  align-self: start !important;
+
+  transform: none !important;
+
+  background: #021F94 !important;
+  border-radius: 2px !important;
+
+  z-index: 2 !important;
+}
+
+.current .resume-right {
+  min-width: 0 !important;
+
+  padding-left: 5px !important;
+}
+
+.current .resume-right h3 {
+  margin: 0 0 10px !important;
+
+  font-size: clamp(1.45rem, 2vw, 2rem) !important;
+
+  line-height: 1.15 !important;
+
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+}
+
+.current .resume-right p {
+  max-width: 680px !important;
+
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+/* =================================
+   MOVE ONLY DATA ANALYST
+================================= */
+
+@media (min-width: 801px) {
+  .hero-name h1 {
+    position: relative !important;
+
+    top: -145px !important;
+  }
+}
+/* =================================
+   WORK HEADING — BIGGER TEXT
+================================= */
+
+/* SELECTED WORK / PROJECTS 2026 */
+.work-heading > div > span {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* FOUR PRACTICAL PROJECTS... */
+.work-heading p {
+  width: 380px !important;
+  max-width: 100% !important;
+
+  font-size: 17px !important;
+  line-height: 1.6 !important;
+  font-weight: 500 !important;
+}
+
+/* =================================
+   PROJECT CATEGORY + CASE STUDY
+   FINAL OVERRIDE
+================================= */
+
+.project-title span {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.project-title small {
+  display: block !important;
+
+  margin-top: 14px !important;
+
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* =================================
+   MORE SPACE BELOW PROJECT IMAGE
+================================= */
+
+.project-title {
+  padding-top: 35px !important;
+}
+/* GITHUB NOTE - BIGGER */
+.work-footer-note {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+  font-weight: 1000 !important;
+}
+
+/* =================================
+   TIMELINE DOT INTERACTION
+================================= */
+
+.current .resume-dot {
+  transition:
+    transform 0.35s cubic-bezier(.16,1,.3,1),
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* Saat kursor masuk ke experience */
+.current .resume-item:hover .resume-dot {
+  transform: scale(1.45) rotate(45deg);
+
+  background: #3f70d0;
+
+  box-shadow:
+    0 0 0 7px rgba(75, 121, 210, 0.14),
+    0 0 18px rgba(75, 121, 210, 0.25);
+}
+/* =================================
+   RESUME DOT — HALF TURN + SCALE
+================================= */
+
+.current .resume-item .resume-dot {
+  rotate: 0deg !important;
+  scale: 1 !important;
+
+  transition:
+    rotate 0.5s cubic-bezier(.16, 1, .3, 1),
+    scale 0.5s cubic-bezier(.16, 1, .3, 1),
+    box-shadow 0.5s ease !important;
+}
+
+.current .resume-item:hover .resume-dot {
+  rotate: 180deg !important;
+  scale: 1.25 !important;
+
+  background: #3f70d0 !important;
+
+  box-shadow:
+    0 0 0 7px rgba(75, 121, 210, 0.14),
+    0 0 18px rgba(75, 121, 210, 0.22) !important;
+}
+/* =================================
+   CONTACT TITLE — CENTER
+================================= */
+
+.contact-billie > h2 {
+  position: relative !important;
+  top: -55px !important;
+
+  text-align: center !important;
+}
+/* =================================
+   LET'S TALK — KEEP LARGE TITLE
+================================= */
+
+.contact-title {
+  display: block !important;
+
+  margin: 0 !important;
+
+  position: relative !important;
+  
+  top: -55px !important;
+  z-index: 2 !important;
+
+  text-align: center !important;
+
+  font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif !important;
+
+  font-size: clamp(5rem, 10.5vw, 11.5rem) !important;
+
+  font-weight: 500 !important;
+
+  line-height: 0.84 !important;
+
+  letter-spacing: -0.09em !important;
+
+  text-decoration: none !important;
+
+  cursor: pointer !important;
+}
+/* =================================
+   CONTACT INFO — BIGGER
+================================= */
+
+.contact-bottom {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+.contact-bottom a,
+.contact-bottom span {
+  font-size: 15px !important;
+}
+
+.contact-bottom div {
+  gap: 7px !important;
+}
+/* =========================================
+   CONTACT CTA — MORE INTERACTIVE
+========================================= */
+
+.contact-title {
+  position: relative !important;
+
+  display: inline-flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+
+  text-decoration: none !important;
+
+  cursor: pointer !important;
+
+  gap: 8px !important;
+
+  transition:
+    transform 0.45s cubic-bezier(.16,1,.3,1),
+    color 0.3s ease !important;
+}
+
+.contact-title-main {
+  position: relative;
+
+  display: inline-block;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+
+  font-size: clamp(5rem, 10.5vw, 11.5rem);
+
+  font-weight: 500;
+
+  line-height: 0.84;
+
+  letter-spacing: -0.09em;
+}
+
+/* garis bawah animasi */
+.contact-title-main::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 100%;
+  height: 3px;
+
+  background: #A9C9FF;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition:
+    transform 0.5s cubic-bezier(.16,1,.3,1);
+}
+
+/* teks kecil */
+.contact-title-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-family: "DM Sans", Arial, sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  color: #8EA8CD;
+
+  opacity: 0;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(.16,1,.3,1);
+}
+
+/* hover */
+.contact-title:hover {
+  transform: translateY(-8px);
+}
+
+.contact-title:hover .contact-title-main::after {
+  transform: scaleX(1);
+}
+
+.contact-title:hover .contact-title-sub {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* =================================
+   CONTACT INTRO
+================================= */
+
+.contact-intro {
+  position: absolute !important;
+
+  left: 50% !important;
+  top: 15% !important;
+
+  transform: translateX(-50%) !important;
+
+  z-index: 3 !important;
+
+  text-align: center !important;
+
+  font-family: "Plus Jakarta Sans", Arial, sans-serif !important;
+
+  font-size: 28px !important;
+  font-weight: 500 !important;
+
+  line-height: 1 !important;
+  letter-spacing: -0.045em !important;
+
+  color: #F7F9FF !important;
+}
+/* =================================
+   HERO PHOTO + TEXT — BIGGER
+================================= */
+
+@media (min-width: 801px) {
+
+  .hero-photo {
+    width: 300px !important;
+    height: 360px !important;
+  }
+
+  .hero-description p {
+    font-size: 19px !important;
+    line-height: 1.55 !important;
+  }
+
+}
+/* =================================
+   VIEW MY WORK — BIGGER TEXT
+================================= */
+
+.hero-primary {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+
+  padding: 15px 20px !important;
+  gap: 10px !important;
+}
+/* =================================
+   LET'S CONNECT — BIGGER
+================================= */
+
+.contact-cta a {
+  padding: 18px 26px !important;
+
+  font-size: 14px !important;
+  font-weight: 700 !important;
+
+  gap: 12px !important;
+
+  border-radius: 999px !important;
+}
+/* =================================
+   EXPERIENCE COMPANY LINK
+================================= */
+
+.resume-company-link {
+  display: inline-flex !important;
+  align-items: center;
+  width: fit-content;
+
+  margin-top: 2px;
+
+  color: #3f70d0 !important;
+
+  font-family: "Manrope", Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+
+  text-decoration: none !important;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    color 0.25s ease;
+}
+
+.resume-company-link:hover {
+  color: #8EA8CD !important;
+  transform: translateX(4px);
+}
+/* =================================
+   SELECTED ON-SCREEN WORK
+================================= */
+
+.resume-selected-work {
+  margin-top: 24px;
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(10, 31, 85, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.resume-selected-work small {
+  color: #7183a0;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+.resume-selected-work a {
+  width: fit-content;
+
+  color: #3f70d0 !important;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.resume-selected-work a:hover {
+  color: #8EA8CD !important;
+  transform: translateX(5px);
+}
+/* =================================
+   MOBILE MENU — LIGHT STYLE
+================================= */
+
+@media (max-width: 800px) {
+
+  .nav nav.open {
+    display: flex !important;
+
+    background: #EAF1FF !important;
+
+    border: 1px solid rgba(10, 31, 85, 0.15) !important;
+
+    box-shadow:
+      0 15px 35px rgba(10, 31, 85, 0.10);
+
+    border-radius: 0 0 14px 14px;
+  }
+
+  .nav nav.open button {
+    color: #06154F !important;
+
+    font-size: 18px !important;
+    font-weight: 600 !important;
+  }
+
+  .nav nav.open button:hover {
+    color: #3B70D9 !important;
+  }
+}
+@media (max-width: 800px) {
+
+  /* =========================
+     RESUME MOBILE — FINAL FIX
+  ========================= */
+
+  .current .resume-timeline {
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  /* GARIS HARUS TEPAT DI BAWAH DOT */
+  .current .resume-timeline::before {
+    left: 13px !important;
+
+    width: 1px !important;
+
+    background: rgba(10, 31, 85, 0.14) !important;
+  }
+
+  .current .resume-item {
+    position: relative !important;
+
+    display: grid !important;
+
+    grid-template-columns: 28px minmax(0, 1fr) !important;
+
+    column-gap: 16px !important;
+
+    width: 100% !important;
+
+    padding-bottom: 48px !important;
+  }
+
+  /* DOT */
+  .current .resume-dot {
+    position: relative !important;
+
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    left: auto !important;
+    top: 4px !important;
+
+    justify-self: center !important;
+
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  /* COMPANY */
+  .current .resume-left {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 6px !important;
+  }
+
+  .current .resume-left strong {
+    width: 100% !important;
+
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  .current .resume-company-link {
+    width: fit-content !important;
+
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+
+    word-break: normal !important;
+  }
+
+  .current .resume-left span {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* JOB CONTENT */
+  .current .resume-right {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+
+    padding: 0 !important;
+    margin: 16px 0 0 !important;
+  }
+
+  .current .resume-right h3 {
+    width: 100% !important;
+
+    font-size: 25px !important;
+    line-height: 1.08 !important;
+
+    margin: 0 0 12px !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+
+  .current .resume-right p {
+    width: 100% !important;
+
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+
+    margin: 0 0 18px !important;
+  }
+
+  /* TAGS */
+  .current .resume-tags {
+    display: flex !important;
+
+    flex-wrap: wrap !important;
+
+    gap: 7px !important;
+
+    width: 100% !important;
+  }
+
+  .current .resume-tags span {
+    font-size: 11px !important;
+  }
+
+  /* SELECTED WORK */
+  .current .resume-selected-work {
+    width: 100% !important;
+
+    margin-top: 24px !important;
+    padding-top: 18px !important;
+  }
+}/* =================================
+   ABOUT MOBILE — PHOTO RIGHT
+   TEXT BELOW PHOTO
+================================= */
+
+@media (max-width: 800px) {
+
+  .about-card {
+    display: grid !important;
+
+    grid-template-columns: 42% minmax(0, 58%) !important;
+    grid-template-rows: auto auto !important;
+
+    column-gap: 20px !important;
+    row-gap: 24px !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding: 28px 24px !important;
+  }
+
+  /* NAMA TETAP DI KIRI */
+  .about-card-title {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+
+    width: 100% !important;
+
+    align-self: start !important;
+  }
+
+  .about-card-title h2 {
+    width: 100% !important;
+
+    font-size: 13vw !important;
+    line-height: 0.82 !important;
+    letter-spacing: -0.08em !important;
+
+    margin: 0 !important;
+  }
+
+  /* FOTO DI KANAN */
+  .about-card-photo {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: 300px !important;
+
+    margin: 0 !important;
+  }
+
+  .about-card-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+  }
+
+  /* TULISAN DI BAWAH FOTO */
+  .about-card-content {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    align-self: start !important;
+  }
+
+  .about-card-content .about-lead {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 0 18px !important;
+
+    font-size: 19px !important;
+    line-height: 1.35 !important;
+  }
+
+  .about-card-content p:not(.about-lead) {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+}
+/* =================================
+   ABOUT MOBILE — PHOTO RIGHT
+   TEXT BELOW PHOTO
+================================= */
+
+@media (max-width: 800px) {
+
+  .about-card {
+    display: grid !important;
+
+    grid-template-columns: 42% minmax(0, 58%) !important;
+    grid-template-rows: auto auto !important;
+
+    column-gap: 20px !important;
+    row-gap: 24px !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding: 28px 24px !important;
+  }
+
+  /* NAMA TETAP DI KIRI */
+  .about-card-title {
+    grid-column: 1 !important;
+    grid-row: 1 / span 2 !important;
+
+    width: 100% !important;
+
+    align-self: start !important;
+  }
+
+  .about-card-title h2 {
+    width: 100% !important;
+
+    font-size: 13vw !important;
+    line-height: 0.82 !important;
+    letter-spacing: -0.08em !important;
+
+    margin: 0 !important;
+  }
+
+  /* FOTO DI KANAN */
+  .about-card-photo {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: 300px !important;
+
+    margin: 0 !important;
+  }
+
+  .about-card-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+  }
+
+  /* TULISAN DI BAWAH FOTO */
+  .about-card-content {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    align-self: start !important;
+  }
+
+  .about-card-content .about-lead {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 0 18px !important;
+
+    font-size: 19px !important;
+    line-height: 1.35 !important;
+  }
+
+  .about-card-content p:not(.about-lead) {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+  }
+}
+@media (max-width: 800px) {
+
+  .about-card-title {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .about-card-title h2 {
+    font-size: 10vw !important;
+    line-height: 0.84 !important;
+    letter-spacing: -0.07em !important;
+
+    text-align: center !important;
+
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+@media (max-width: 800px) {
+
+  .about-card-title {
+    display: flex !important;
+
+    justify-content: center !important;
+    align-items: center !important;
+
+    height: 60% !important;
+
+    text-align: center !important;
+  }
+
+  .about-card-title h2 {
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    text-align: center !important;
+
+    font-size: 10vw !important;
+    line-height: 0.84 !important;
+    letter-spacing: -0.07em !important;
+  }
+}
+@media (max-width: 800px) {
+
+  .about-card {
+    display: grid !important;
+
+    grid-template-columns: 42% minmax(0, 58%) !important;
+    grid-template-rows: auto auto !important;
+
+    column-gap: 20px !important;
+    row-gap: 28px !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    padding: 28px 24px !important;
+  }
+
+  /* NAMA — KIRI */
+  .about-card-title {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    text-align: center !important;
+  }
+
+  .about-card-title h2 {
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    font-size: 10vw !important;
+    line-height: 0.84 !important;
+    letter-spacing: -0.07em !important;
+
+    text-align: center !important;
+  }
+
+  /* FOTO — KANAN */
+  .about-card-photo {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: 300px !important;
+
+    margin: 0 !important;
+  }
+
+  .about-card-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+  }
+
+  /* TEKS — FULL WIDTH KIRI + KANAN */
+  .about-card-content {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    align-self: start !important;
+  }
+
+  .about-card-content .about-lead {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 0 20px !important;
+
+    font-size: 19px !important;
+    line-height: 1.35 !important;
+  }
+
+  .about-card-content p:not(.about-lead) {
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+
+    white-space: normal !important;
+  }
+}
+/* =================================
+   RESUME TAGS — BIGGER
+================================= */
+
+.resume-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+.resume-tags span {
+  padding: 8px 14px !important;
+
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+
+  border-radius: 999px !important;
+
+  white-space: nowrap !important;
+}
