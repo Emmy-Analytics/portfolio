@@ -5920,3 +5920,56 @@ body,
 
   white-space: nowrap !important;
 }
+/* =========================================
+   HERO BOTTOM - SAME HORIZONTAL LINE
+========================================= */
+
+.hero-location {
+  position: absolute !important;
+
+  left: 4vw !important;
+  bottom: 6% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  color: #0b2b66 !important;
+
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+
+  line-height: 1 !important;
+
+  white-space: nowrap !important;
+}
+
+.hero-location strong {
+  font-weight: 700 !important;
+}
+
+
+.hero-scroll {
+  position: absolute !important;
+
+  right: 4vw !important;
+  bottom: 4% !important;
+  left: auto !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  background: transparent !important;
+
+  color: #0b2b66 !important;
+
+  font-family: "DM Sans", Arial, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+
+  line-height: 1 !important;
+  letter-spacing: 0.07em !important;
+
+  white-space: nowrap !important;
+}
