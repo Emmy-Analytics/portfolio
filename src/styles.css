@@ -5973,3 +5973,63 @@ body,
 
   white-space: nowrap !important;
 }
+/* =========================================
+   MOBILE HERO BOTTOM ALIGNMENT
+========================================= */
+
+@media (max-width: 800px) {
+
+  /* BASED IN INDONESIA */
+  .billie-hero > span {
+    position: absolute !important;
+
+    left: 6vw !important;
+    bottom: 34px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #0b2b66 !important;
+
+    font-family: "DM Sans", Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+
+    line-height: 1 !important;
+
+    white-space: nowrap !important;
+  }
+
+  .billie-hero > span strong {
+    font-weight: 700 !important;
+  }
+
+
+  /* SCROLL TO EXPLORE */
+  .billie-hero .hero-scroll {
+    position: absolute !important;
+
+    right: 6vw !important;
+    left: auto !important;
+    bottom: 40px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+    background: transparent !important;
+
+    color: #0b2b66 !important;
+
+    font-family: "DM Sans", Arial, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+
+    line-height: 1 !important;
+    letter-spacing: .05em !important;
+
+    white-space: nowrap !important;
+
+    transform: none !important;
+  }
+}
